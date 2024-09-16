@@ -3,7 +3,7 @@ import { update } from '../BooksAPI';
 
 const Book = props => {
     const {book, updateShelf, isSearching} = props;
-    const imageThumb = book.imageLink?.smallThumbnail || null;
+    const imageThumb = book.imageLinks?.smallThumbnail || null;
 
     const handleShelfChange = event => {
       if (event.target.value !== "move") {
