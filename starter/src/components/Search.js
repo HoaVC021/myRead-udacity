@@ -6,6 +6,8 @@ import Book from "./Book";
 
 import * as BooksAPI from "../BooksAPI";
 
+import { Link } from 'react-router-dom';
+
 const Search = props => {
   const [searchText, setSearchText] = useState("");
   const [searchedBooks, setSearchedBooks] = useState([]);
@@ -39,12 +41,12 @@ const Search = props => {
       return { ...book, shelf: "none" };
     });
   };
-
+/* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     handleSearchTextChange();
   }, [searchText]);
 
-  return (
+  return (<>
     <div className="search-books">
       <div className="search-books-bar">
         <button className="close-search" onClick={() => navigate("/")}>
@@ -71,6 +73,14 @@ const Search = props => {
         </ol>
       </div>
     </div>
+    <div className="footer">
+   <Link
+      to='/'
+    >
+        Back To Home
+    </Link>
+   </div>
+    </>
   );
 };
 

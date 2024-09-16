@@ -33,7 +33,7 @@ const App  = () => {
     getBooks();
   }, []);
 
-  return (
+  return (<>
     <div className="app">
      <div className="list-books">
         <div className="list-books-title">
@@ -65,6 +65,14 @@ const App  = () => {
         </div>
       </div>
     </div>
+   <div className="footer">
+   <Link
+      to='/search'
+    >
+        Add a book
+    </Link>
+   </div>
+    </>
   );
 }
 
