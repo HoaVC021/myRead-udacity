@@ -6,13 +6,12 @@ const Book = props => {
     const imageThumb = book.imageLink?.smallThumbnail || null;
 
     const handleShelfChange = event => {
-      if (event.target.value !== "none") {
+      if (event.target.value !== "move") {
         updateShelf(book, event.target.value)
       }
     };
-  
     const handleShelfChangeOnSearchPage = event => {
-      if (event.target.value !== "none") {
+      if (event.target.value !== "move") {
         update(book, event.target.value)
       }
     };
@@ -39,7 +38,7 @@ const Book = props => {
             }
             }}
             defaultValue={book.shelf}>
-            <option value="none" disabled>
+            <option value="move" disabled>
               Move to...
             </option>
             <option value="currentlyReading">

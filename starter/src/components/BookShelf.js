@@ -11,12 +11,11 @@ const BookShelf = props => {
                 <ol className="books-grid">
                 {books &&
             books.map((book, index) => (
-              <li key={index}>
                 <Book
+                  key={index}
                   book={book}
                   updateShelf={updateShelf}
                 />
-              </li>
             ))}
                 </ol>
             </div>

@@ -13,14 +13,16 @@ const Search = props => {
 
   const handleSearchTextChange = event => {
     if (searchText.length !== 0) {
-      BooksAPI.search(searchText).then(searchedBooks => {
-        if (!searchedBooks.error) {
+      BooksAPI.search(searchText).then(searched => {
+        if (!searched.error) {
           BooksAPI.getAll().then(myBooks => {
-            setSearchedBooks(setDefaultShelves(searchedBooks, myBooks));
+            setSearchedBooks(setDefaultShelves(searched, myBooks));
+            
           });
         } else {
           setSearchedBooks([]);
         }
+        console.log(searchedBooks);
       });
     } else if (searchText.length === 0) {
       setSearchedBooks([]);
